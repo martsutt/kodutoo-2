@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Underdog&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Underdog&display=swap"
+      />
+    </noscript>
+    <style>
+      body {
+        visibility: hidden;
+      }
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(function () {
+            document.body.style.visibility = "visible";
+          });
+        } else {
+          document.body.style.visibility = "visible";
+        }
+      });
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Typer</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="greeting"></div>
+      <div id="clock"></div>
+      <div id="topScore"></div>
+      <div id="wordDiv">Siia tuleb sõna</div>
+      <div id="score">Kuvame aega, mis kulus trükkimiseks</div>
+    </div>
+    <div id="infoContainer">
+      <div id="info">Siia tuleb sõnade arv 1/5</div>
+      <button id="showResultsButton">Tulemused</button>
+    </div>
+    <div id="resultsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeResults">&times;</span>
+        <h2>Tulemused</h2>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Nimi</th>
+              <th>Kiirus (sek)</th>
+              <th>Sõnu minutis</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="results">
+      <div>tulemus</div>
+      <div>tulemus</div>
+      <div>tulemus</div>
+      <div>tulemus</div>
+    </div>
+    <audio id="audioStart" src="sounds/typingstart.mp3"></audio>
+    <audio id="audioDuring" src="sounds/duringtyping.mp3"></audio>
+    <audio id="audioEnd" src="sounds/typingfinish.mp3"></audio>
+    <audio id="audioScore" src="sounds/openscoreboard.mp3"></audio>
+  </body>
+</html>
